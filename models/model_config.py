@@ -1,5 +1,3 @@
-# models/model_config.py
-
 from dataclasses import dataclass
 from typing import Optional, Dict, Any
 
