@@ -1,0 +1,13 @@
+# directories
+data/
+finetune-output-llama/
+finetune-output-mistral/
+eval/
+eval_results/
+
+# files
+test_imports.py
+test_llama_baseline.py
+test_mistral_baseline.py
+test_llama_finetuned.py
+test_mistral_finetuned.py
