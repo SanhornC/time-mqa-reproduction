@@ -181,7 +181,7 @@ def test_model_loading(model_name: str = "mistral"):
         tokenizer = model.get_tokenizer()
         model_obj = model.get_model()
         
-        logger.info(f"✅ {model_name.upper()} model loaded successfully")
+        logger.info(f"{model_name.upper()} model loaded successfully")
         logger.info(f"Model config: {model.config.model_name}")
         logger.info(f"Tokenizer vocab size: {len(tokenizer)}")
         logger.info(f"LoRA enabled: {model.config.use_lora}")
@@ -202,28 +202,28 @@ def test_model_loading(model_name: str = "mistral"):
         return model
         
     except Exception as e:
-        logger.error(f"❌ Failed to load {model_name}: {str(e)}")
+        logger.error(f"Failed to load {model_name}: {str(e)}")
         import traceback
         traceback.print_exc()
         return None
 
-if __name__ == "__main__":
-    # Test all models
-    models_to_test = ["mistral", "llama", "qwen"]
+# if __name__ == "__main__":
+#     # Test all models
+#     models_to_test = ["mistral", "llama", "qwen"]
     
-    for model_name in models_to_test:
-        print(f"\n{'='*50}")
-        print(f"Testing {model_name.upper()} Model")
-        print(f"{'='*50}")
+#     for model_name in models_to_test:
+#         print(f"\n{'='*50}")
+#         print(f"Testing {model_name.upper()} Model")
+#         print(f"{'='*50}")
         
-        model = test_model_loading(model_name)
+#         model = test_model_loading(model_name)
         
-        if model is not None:
-            print(f"✅ {model_name.upper()} test passed")
-        else:
-            print(f"❌ {model_name.upper()} test failed")
+#         if model is not None:
+#             print(f"✅ {model_name.upper()} test passed")
+#         else:
+#             print(f"❌ {model_name.upper()} test failed")
         
-        # Clean up GPU memory
-        if model is not None:
-            del model
-            torch.cuda.empty_cache()
+#         # Clean up GPU memory
+#         if model is not None:
+#             del model
+#             torch.cuda.empty_cache()
